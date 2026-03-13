@@ -1,0 +1,17 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.btn {
+  border-radius: $radius;
+  background-color: #abcaff;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: $text;
+  transition: $transition;
+}
+
+.btn:hover {
+  background-color: #04b82b;
+  box-shadow: 0 0 0 5px #72cb045f;
+  color: #fff;
+}

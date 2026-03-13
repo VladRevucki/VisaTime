@@ -1,0 +1,53 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.btn {
+  font-size: 18px;
+  color: $text;
+  padding: 15px 20px;
+  border-radius: $radius-bg;
+  background-color: #e8e8e8;
+  border: 1.5px solid #e2e2e2;
+  box-shadow:
+    6px 6px 10px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  transform: skewX(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03f46f, #edb10d, #ffeb3b, #03f46f);
+  background-size: 400%;
+  border-radius: 30px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover::before {
+  filter: blur(10px);
+  opacity: 1;
+  animation: animateBorder 8s linear infinite;
+}
+
+@keyframes animateBorder {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+.btn:active {
+  box-shadow:
+    5px 5px 12px #cfcece,
+    -4px -4px 12px #fcfcfc;
+}

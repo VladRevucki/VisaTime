@@ -3,7 +3,6 @@ export const destinations = {
     {
       slug: "poland",
       country: "Польша",
-      flag: "🇵🇱",
       price: "от 190 BYN",
       terms: ["Срок: 10–20 дней", "Туризм / гостевая", "Запись включена"],
       category: "schengen",
@@ -23,7 +22,6 @@ export const destinations = {
     {
       slug: "italy",
       country: "Италия",
-      flag: "🇮🇹",
       price: "от 240 BYN",
       terms: ["Срок: 12–25 дней", "Туризм / бизнес", "Проверка страховки"],
       category: "schengen",
@@ -44,7 +42,6 @@ export const destinations = {
     {
       slug: "spain",
       country: "Испания",
-      flag: "🇪🇸",
       price: "от 220 BYN",
       terms: ["Срок: 9–18 дней", "Туризм", "Сопровождение под ключ"],
       category: "schengen",
@@ -65,7 +62,6 @@ export const destinations = {
     {
       slug: "germany",
       country: "Германия",
-      flag: "🇩🇪",
       price: "от 260 BYN",
       terms: ["Срок: 14–28 дней", "Туризм / бизнес", "Проверка финансов"],
       category: "schengen",
@@ -86,7 +82,6 @@ export const destinations = {
     {
       slug: "france",
       country: "Франция",
-      flag: "🇫🇷",
       price: "от 250 BYN",
       terms: ["Срок: 12–22 дней", "Туризм / культура", "Страховка включена"],
       category: "schengen",
@@ -106,7 +101,6 @@ export const destinations = {
     {
       slug: "czech",
       country: "Чехия",
-      flag: "🇨🇿",
       price: "от 200 BYN",
       terms: ["Срок: 10–18 дней", "Туризм / гостевая", "Быстрое оформление"],
       category: "schengen",
@@ -128,7 +122,6 @@ export const destinations = {
     {
       slug: "uk-standard",
       country: "Standard Visitor",
-      flag: "🇬🇧",
       price: "от 420 BYN",
       terms: [
         "Срок: 18–35 дней",
@@ -153,7 +146,6 @@ export const destinations = {
     {
       slug: "uk-student",
       country: "Student Visa",
-      flag: "🎓",
       price: "от 510 BYN",
       terms: [
         "Срок: 20–40 дней",
@@ -177,7 +169,6 @@ export const destinations = {
     {
       slug: "uk-business",
       country: "Business Visa",
-      flag: "💼",
       price: "от 470 BYN",
       terms: ["Срок: 18–32 дней", "Деловые поездки", "Проверка приглашения"],
       category: "uk",
@@ -199,7 +190,6 @@ export const destinations = {
     {
       slug: "usa-b2",
       country: "B1/B2 Tourist",
-      flag: "🇺🇸",
       price: "от 690 BYN",
       terms: [
         "Срок: индивидуально",
@@ -224,7 +214,6 @@ export const destinations = {
     {
       slug: "usa-f1",
       country: "F-1 Student",
-      flag: "🎓",
       price: "от 780 BYN",
       terms: ["Срок: индивидуально", "Проверка I-20", "Подготовка к консулу"],
       category: "usa",
@@ -244,7 +233,6 @@ export const destinations = {
     {
       slug: "usa-j1",
       country: "J-1 Exchange",
-      flag: "🔄",
       price: "от 720 BYN",
       terms: ["Срок: индивидуально", "Анализ программы", "Комплект документов"],
       category: "usa",
