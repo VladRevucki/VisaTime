@@ -1,7 +1,8 @@
 import cls from "./Header.module.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { destinations } from "../../data";
 import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { destinations, navLinks } from "../../data";
+import { IoIosArrowDown } from "react-icons/io";
 import { ButtonCustom } from "../../Components/ButtonCustom/ButtonCustom";
 
 const dropdownGroups = [
@@ -10,7 +11,6 @@ const dropdownGroups = [
     items: destinations.schengen.map(({ slug, country, price }) => ({
       slug,
       country,
-
       price,
     })),
   },
@@ -19,7 +19,6 @@ const dropdownGroups = [
     items: destinations.uk.map(({ slug, country, price }) => ({
       slug,
       country,
-
       price,
     })),
   },
@@ -28,7 +27,6 @@ const dropdownGroups = [
     items: destinations.usa.map(({ slug, country, price }) => ({
       slug,
       country,
-
       price,
     })),
   },
@@ -58,12 +56,6 @@ export const Header = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const navLinks = [
-    { to: "/directions", label: "Направления" },
-    { to: "/about", label: "О нас" },
-    { to: "/contact", label: "Контакты" },
-  ];
-
   return (
     <div className={cls.header}>
       <div className={cls.header_wrapper}>
@@ -86,7 +78,11 @@ export const Header = () => {
               onClick={() => setDropOpen((prev) => !prev)}
             >
               Виза в Европу
-              <span className={cls["nav-drop-arrow"]}>▾</span>
+              <span
+                className={`${cls["nav-drop-arrow"]} ${dropOpen ? cls["active"] : ""}`}
+              >
+                <IoIosArrowDown />
+              </span>
             </button>
             {dropOpen && <VisaDropdown onClose={() => setDropOpen(false)} />}
           </div>

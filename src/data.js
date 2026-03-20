@@ -363,3 +363,15 @@ export const team = [
     emoji: "🧑‍💼",
   },
 ];
+
+export const navLinks = [
+  { to: "/directions", label: "Направления" },
+  { to: "/about", label: "О нас" },
+  { to: "/contact", label: "Контакты" },
+];
+
+export const metrics = [
+  { value: "5 лет", label: "на рынке" },
+  { value: "7 000+", label: "оформленных виз" },
+  { value: "95%", label: "одобрений" },
+];

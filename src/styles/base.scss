@@ -1,16 +1,31 @@
+@use "./variables.scss" as *;
+
+@font-face {
+  font-family: "Segoe UI Semibold";
+  src: url("../../assets/fonts/segoe_ui_semibold.eot");
+  src:
+    url("../../assets/fonts/segoe_ui_semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/segoe_ui_semibold.woff2") format("woff2"),
+    url("../../assets/fonts/segoe_ui_semibold.woff") format("woff"),
+    url("../../assets/fonts/segoe_ui_semibold.ttf") format("truetype"),
+    url("../../assets/fonts/segoe_ui_semibold.svg#segoe_ui_semibold")
+      format("svg");
+}
+
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Segoe UI Semibold", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 500;
-  font-size: 16px;
-  color: #1a1c20;
+  font-size: clamp(14px, 4vw, 16px);
+  color: $text;
 }
 
 h1,
@@ -39,9 +54,6 @@ button {
   outline: none;
   border: none;
   background: transparent;
-  line-height: 1.5;
-  font-weight: 500;
-  font-size: 16px;
 }
 
 button {
