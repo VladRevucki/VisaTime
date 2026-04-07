@@ -1,4 +1,4 @@
-$bg: rgb(236, 236, 236);
+$bg: rgb(255, 255, 255);
 $bg2: rgb(18, 117, 157);
 $bg-hover: rgb(36, 115, 179);
 $border: rgba(183, 228, 255, 0.85);
@@ -10,3 +10,6 @@ $hover: rgba(21, 94, 140, 0.85);
 $radius: 10px;
 $radius-bg: 20px;
 $transition: all 0.3s ease-in-out;
+$size: clamp(14px, 4vw, 20px);
+$size-bg: clamp(16px, 4vw, 22px);
+$size-sm: clamp(12px, 4vw, 18px);

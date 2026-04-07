@@ -1,0 +1,90 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  gap: 20px;
+  background-repeat: no-repeat;
+  border-top: 1px solid $hover;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(43, 108, 176, 0.4) 0%,
+      rgba(72, 126, 176, 0.4) 33%,
+      rgba(95, 142, 176, 0.4) 66%,
+      rgba(116, 157, 176, 0.4) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%
+    );
+
+  &_head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      color: $text2;
+      font-weight: 600;
+      font-size: $size;
+    }
+  }
+}
+
+.steps_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.steps_container {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.step_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.step_num {
+  font-size: $size-bg;
+  color: rgb(0, 153, 101);
+}
+
+.step_text {
+  font-size: $size-sm;
+  line-height: 1.2;
+  color: $text2;
+}
+
+.step_arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

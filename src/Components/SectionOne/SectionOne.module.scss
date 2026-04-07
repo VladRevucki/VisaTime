@@ -3,7 +3,7 @@
 
 .section_wrapper {
   width: 100%;
-  height: 620px;
+  min-height: 620px;
   position: relative;
   @include flex;
   padding: 20px;
@@ -24,7 +24,7 @@
     inset: 0;
     background: $border;
     border-radius: 40px;
-    filter: blur(10px);
+    filter: blur(3px);
     z-index: 0;
   }
 
@@ -41,15 +41,10 @@
   border-radius: $radius;
 }
 
-.title {
-  font-size: clamp(20px, 4.5vw, 50px);
-  line-height: 0.9;
-}
-
 .subtitle {
   padding: 5px 10px;
   perspective: 385px;
-  transform: rotateX(5deg) rotateY(346deg);
+  transform: rotateX(2deg) rotateY(350deg);
   transform-style: preserve-3d;
   background: $bg;
   box-shadow:
@@ -62,7 +57,7 @@
   width: 100%;
   padding: 0 10px;
   @include flex;
-  justify-content: baseline;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -88,6 +83,7 @@
 
 .metrics {
   @include flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 

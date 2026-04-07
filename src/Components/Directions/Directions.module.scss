@@ -1,0 +1,134 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  gap: 20px;
+  background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(43, 108, 176, 0.4) 0%,
+      rgba(72, 126, 176, 0.4) 33%,
+      rgba(95, 142, 176, 0.4) 66%,
+      rgba(116, 157, 176, 0.4) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%
+    );
+
+  &_head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      color: $text2;
+      font-weight: 600;
+      font-size: $size;
+    }
+  }
+}
+
+.tabs {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tab {
+  border: 1px solid $border;
+  background: $bg;
+  border-radius: 999px;
+  transition: $transition;
+  padding: 10px 20px;
+
+  &:hover {
+    background: $hover;
+    color: #fff;
+  }
+
+  &.active {
+    background: $bg2;
+    color: #fff;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.country_card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  cursor: pointer;
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: $radius;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 1px 10px 7px $border;
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  ul {
+    padding-left: 16px;
+    list-style: disc;
+    flex: 1;
+
+    li {
+      margin-top: 5px;
+    }
+  }
+}
+
+.country_price {
+  font-size: $size-sm;
+}
+
+.card_btn {
+  font-size: $size-sm;
+  width: 100%;
+  text-align: center;
+  border: 1px solid $border;
+  background: $bg;
+  border-radius: 999px;
+  transition: $transition;
+  padding: 10px 20px;
+
+  &:hover {
+    background: $hover;
+    color: #fff;
+  }
+}
