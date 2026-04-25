@@ -3,10 +3,9 @@ import cls from "./MainLayout.module.scss";
 import { Outlet } from "react-router";
 import { Header } from "../../Pages/Header/Header";
 import { Loader } from "../Loader/Loader";
+import { Footer } from "../Footer/Footer";
 
 export const MainLayout = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <>
       <div className={cls.mainLayout}>
@@ -17,10 +16,9 @@ export const MainLayout = () => {
               <Outlet />
             </Suspense>
           </main>
-          <footer className={cls.footer}>
-            VisaTime | {currentYear} <br />
-            by Vladislav Revutski
-          </footer>
+          <div className={cls.footer}>
+            <Footer />
+          </div>
         </div>
       </div>
     </>

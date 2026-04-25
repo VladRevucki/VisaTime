@@ -7,11 +7,11 @@ import { FAQ } from "../../Components/FAQ/FAQ";
 
 export const HomePage = () => {
   return (
-    <div className={cls.home_wrapper}>
+    <>
       <SectionOne />
       <Directions />
       <Steps />
       <FAQ />
-    </div>
+    </>
   );
 };

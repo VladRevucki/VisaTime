@@ -1,0 +1,164 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.tag {
+  text-transform: uppercase;
+  width: fit-content;
+  background: $bg2;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: $radius;
+  display: inline-block;
+}
+
+.optional {
+  color: $text2;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.lead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-top: 0.8rem;
+  }
+}
+
+.lead-perks {
+  margin-top: 0.6rem;
+  display: grid;
+  gap: 0.4rem;
+
+  li {
+    font-weight: 600;
+    font-size: 0.94rem;
+  }
+}
+
+.lead-contacts {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.18s;
+
+    &:hover {
+      color: $text2;
+    }
+  }
+}
+
+.lead-form {
+  display: grid;
+  gap: 0.8rem;
+  border-radius: $radius;
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 600;
+    font-size: 0.93rem;
+  }
+
+  input,
+  select,
+  textarea {
+    border: 1px solid #c6d4c3;
+    border-radius: $radius;
+    padding: 0.62rem 0.75rem;
+    font: inherit;
+    color: $text;
+    background: #fff;
+    transition:
+      border-color 0.2s,
+      outline 0.2s;
+    resize: vertical;
+
+    &:focus {
+      outline: 2px solid #9fd18f;
+      border-color: #9fd18f;
+    }
+  }
+}
+
+.input-error {
+  border-color: #e05252 !important;
+}
+.field-error {
+  color: #c53030;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.form-note {
+  font-size: 0.82rem;
+  text-align: center;
+  margin: 0;
+}
+
+.form-success {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #e6f7e0;
+  border: 1px solid #b5dfa7;
+  border-radius: $radius;
+  padding: 0.9rem;
+
+  span {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  strong {
+    display: block;
+  }
+  p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0;
+  }
+}
+
+.btn {
+  background: $bg2;
+  color: white;
+  border: none;
+  border-radius: $radius;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+
+  &:hover {
+    background: $bg-hover;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lead-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .lead-grid {
+    grid-template-columns: 1fr;
+  }
+}

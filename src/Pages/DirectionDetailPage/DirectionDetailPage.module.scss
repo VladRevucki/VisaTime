@@ -1,0 +1,207 @@
+@use "../../styles/mixin.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem;
+  gap: 1rem;
+  background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(43, 108, 176, 0.4) 0%,
+      rgba(72, 126, 176, 0.4) 33%,
+      rgba(95, 142, 176, 0.4) 66%,
+      rgba(116, 157, 176, 0.4) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%
+    );
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: $text2;
+  flex-wrap: wrap;
+
+  a {
+    color: $text;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_country {
+    width: fit-content;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-bg;
+    background: $bg2;
+    outline: 1px solid $border;
+  }
+}
+
+.detail-hero {
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.detail-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  background: #fff;
+
+  &_label {
+    color: $text2;
+  }
+}
+
+.detail-body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.detail-docs {
+  h2 {
+    font-size: $size-bg;
+    margin-bottom: 1rem;
+  }
+}
+
+.doc-list {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 0;
+
+  li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: 0.7rem 1rem;
+  }
+}
+
+.doc-note {
+  color: $text2;
+  font-size: $size;
+  margin-top: 0.5rem;
+}
+
+.detail-aside {
+  position: sticky;
+  top: 80px;
+}
+
+.aside-card {
+  background: linear-gradient(160deg, #f0f6eb, #fff);
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  h3 {
+    font-size: $size-sm;
+  }
+  p {
+    color: $text2;
+    font-size: 1rem;
+    text-align: center;
+  }
+  a {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: $radius-bg;
+    background: $bg2;
+    text-align: center;
+    outline: 1px solid $border;
+    transition: $transition;
+
+    &:hover {
+      outline-color: $border-hover;
+    }
+  }
+}
+
+.form {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem;
+  }
+
+  .detail-hero {
+    padding: 1rem 0 1rem;
+  }
+
+  .detail-meta {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .meta-pill {
+    min-width: unset;
+    flex: 1;
+  }
+
+  .detail-body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detail-aside {
+    position: static;
+  }
+
+  .aside-card {
+    padding: 1rem;
+  }
+}

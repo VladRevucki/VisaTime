@@ -1,14 +1,77 @@
 @use "../../styles/mixin.scss" as *;
 @use "../../styles/variables.scss" as *;
 
+.faq_summary {
+  @include flex;
+  justify-content: center;
+  max-width: 780px;
+  width: 100%;
+  font-size: clamp(0.8rem, 4vw, 1.2rem);
+  border: 1px solid $border;
+  background: $bg;
+  border-radius: $radius;
+  transition: $transition;
+  padding: 0.7rem 1.2rem;
+  gap: 0.7rem;
+
+  &:hover {
+    background: $text-hover;
+  }
+
+  &_open {
+    border-radius: 0.7rem 0.7rem 0 0;
+  }
+}
+
+.faq_wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: $transition;
+
+  &_open {
+    grid-template-rows: 1fr;
+  }
+}
+
+.faq_content {
+  min-height: 0;
+  margin-top: -0.7rem;
+}
+
+.faq_answer {
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem 1.2rem;
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: 0 0 0.7rem 0.7rem;
+}
+
+.tabs {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.faq_list {
+  @include flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem;
+}
+
 .section {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 40px 30px;
-  gap: 20px;
+  padding: 2rem;
+  gap: 1.2rem;
   background-repeat: no-repeat;
+  border-top: 1px solid $hover;
   background-image:
     repeating-linear-gradient(
       60deg,
@@ -40,7 +103,7 @@
   &_head {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.7rem;
 
     p {
       color: $text2;
@@ -48,87 +111,24 @@
       font-size: $size;
     }
   }
-}
 
-.tabs {
-  @include flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.tab {
-  border: 1px solid $border;
-  background: $bg;
-  border-radius: 999px;
-  transition: $transition;
-  padding: 10px 20px;
-
-  &:hover {
-    background: $hover;
-    color: #fff;
-  }
-
-  &.active {
-    background: $bg2;
-    color: #fff;
-  }
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.country_card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  cursor: pointer;
-  background: $bg;
-  border: 1px solid $border;
-  border-radius: $radius;
-  transition: $transition;
-
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 1px 10px 7px $border;
-  }
-
-  &_header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  ul {
-    padding-left: 16px;
-    list-style: disc;
-    flex: 1;
-
-    li {
-      margin-top: 5px;
+  @media (max-width: 768px) {
+    .faq_summary {
+      width: 100%;
+      padding: 0.5rem 1rem;
     }
-  }
-}
 
-.country_price {
-  font-size: $size-sm;
-}
+    .faq_answer {
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
 
-.card_btn {
-  font-size: $size-sm;
-  width: 100%;
-  text-align: center;
-  border: 1px solid $border;
-  background: $bg;
-  border-radius: 999px;
-  transition: $transition;
-  padding: 10px 20px;
+    .tabs {
+      gap: 0.4rem;
+    }
 
-  &:hover {
-    background: $hover;
-    color: #fff;
+    .faq_list {
+      padding: 1rem 0;
+    }
   }
 }

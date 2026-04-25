@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2rem;
+  padding: 2rem 5rem;
   gap: 1rem;
   background-repeat: no-repeat;
   background-image:
@@ -47,6 +47,16 @@
       font-size: $size;
     }
   }
+}
+
+.directions {
+  width: fit-content;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border-radius: $radius-bg;
+  background: $bg2;
+  outline: 1px solid $border;
 }
 
 .tabs {
@@ -98,22 +108,31 @@
   &_header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.7rem;
   }
+}
 
-  ul {
-    padding-left: 16px;
-    list-style: disc;
-    flex: 1;
-
-    li {
-      margin-top: 5px;
-    }
-  }
+.country_category {
+  font-size: $size-sm;
+  color: #fff;
+  border-radius: $radius-bg;
+  padding: 0.4rem 0.8rem;
+  background: $bg2;
 }
 
 .country_price {
   font-size: $size-sm;
+}
+
+ul {
+  padding-left: 1rem;
+  list-style: disc;
+  flex: 1;
+
+  li {
+    margin-top: 5px;
+  }
 }
 
 .card_btn {

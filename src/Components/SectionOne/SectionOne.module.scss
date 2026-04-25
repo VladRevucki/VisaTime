@@ -98,3 +98,29 @@
     font-size: clamp(12px, 4.5vw, 18px);
   }
 }
+
+@media (max-width: 768px) {
+  .section_wrapper {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .section_container {
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .btn_wrapper {
+    padding: 0 5px;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+  }
+
+  .metrics {
+    gap: 10px;
+  }
+}
