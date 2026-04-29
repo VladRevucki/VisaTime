@@ -2,9 +2,8 @@
 @use "../../styles/variables.scss" as *;
 
 .btn {
-  font-size: 18px;
   color: $text;
-  padding: 15px 20px;
+  padding: 1rem 2rem;
   border-radius: $radius-bg;
   background-color: #e8e8e8;
   border: 1.5px solid #e2e2e2;
@@ -14,6 +13,10 @@
   transform: skewX(0);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .btn::before {

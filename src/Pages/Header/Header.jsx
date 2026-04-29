@@ -1,5 +1,6 @@
 import cls from "./Header.module.scss";
 import { useEffect, useRef, useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { destinations, navLinks } from "../../data";
 import { IoIosArrowDown } from "react-icons/io";
@@ -57,6 +58,15 @@ export const Header = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => document.body.classList.remove("no-scroll");
+  }, [isOpen]);
+
   return (
     <div className={cls.header}>
       <div className={cls.header_wrapper}>
@@ -67,13 +77,8 @@ export const Header = () => {
             alt="logo"
           />
         </button>
-        <button
-          className={`${cls.burger_btn} ${isOpen ? cls["active"] : ""}`}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          Menu
-        </button>
-        <nav className={`${cls.nav_wrapper} ${isOpen ? cls["active"] : ""}`}>
+
+        <nav className={`${cls.nav_wrapper} ${isOpen ? cls.active : ""}`}>
           <div
             className={cls["nav-drop-wrap"]}
             ref={dropRef}
@@ -86,7 +91,7 @@ export const Header = () => {
             >
               Виза в Европу
               <span
-                className={`${cls["nav-drop-arrow"]} ${dropOpen ? cls["active"] : ""}`}
+                className={`${cls["nav-drop-arrow"]} ${dropOpen ? cls.active : ""}`}
               >
                 <IoIosArrowDown />
               </span>
@@ -98,8 +103,9 @@ export const Header = () => {
             <NavLink
               key={to}
               to={to}
+              onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `${cls.nav_link} ${isActive ? cls["active"] : ""}`
+                `${cls.nav_link} ${isActive ? cls.active : ""}`
               }
             >
               {label}
@@ -107,8 +113,17 @@ export const Header = () => {
           ))}
         </nav>
         <ButtonCustom>
-          <Link to="/contact">Оставить заявку</Link>
+          <Link to="/contact" className={cls.btn_send}>
+            Оставить заявку
+          </Link>
         </ButtonCustom>
+
+        <button
+          className={cls.burger_btn}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          <RxHamburgerMenu />
+        </button>
       </div>
     </div>
   );

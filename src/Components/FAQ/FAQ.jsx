@@ -13,7 +13,7 @@ const FaqItem = ({ q, a, open, onToggle }) => {
         {q}
         {open ? <FaMinus /> : <FaPlus />}
       </button>
-      <div className={`${cls.faq_wrapper}${open ? cls.faq_wrapper_open : ""}`}>
+      <div className={`${cls.faq_wrapper}${open ? cls.open : ""}`}>
         <div className={cls.faq_content}>
           {open && <p className={cls.faq_answer}>{a}</p>}
         </div>

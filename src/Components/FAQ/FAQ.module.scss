@@ -30,7 +30,7 @@
   overflow: hidden;
   transition: $transition;
 
-  &_open {
+  &.open {
     grid-template-rows: 1fr;
   }
 }
@@ -128,7 +128,7 @@
     }
 
     .faq_list {
-      padding: 1rem 0;
+      padding: 1rem 0 0;
     }
   }
 }

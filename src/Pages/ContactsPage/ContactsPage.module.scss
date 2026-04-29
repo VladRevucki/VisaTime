@@ -44,16 +44,16 @@
   width: fit-content;
   color: #fff;
   text-transform: uppercase;
-  padding: 0.75rem 1.5625rem;
-  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-bg;
   background: $bg2;
   outline: 1px solid $border;
-  transition: all 0.3s ease-in-out;
+  transition: $transition;
 }
 
 .subtitle {
   color: $text2;
-  font-size: clamp(0.7rem, 2vw, 1.2rem);
+  font-size: $size;
 }
 
 .contact-grid {
@@ -114,7 +114,7 @@
 
 @media (max-width: 1024px) {
   .page-wrap {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .contact-grid {

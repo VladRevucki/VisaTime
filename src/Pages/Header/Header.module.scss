@@ -10,6 +10,7 @@
   &_wrapper {
     @include flex;
     justify-content: space-between;
+    gap: 0.8rem;
     width: 100%;
     max-width: 1440px;
     height: 90px;
@@ -19,13 +20,24 @@
     width: 90px;
     border-radius: $radius;
   }
+
+  @media (max-width: 800px) {
+    padding: 0 1rem;
+  }
+}
+
+.btn_send {
+  font-size: $size-sm;
 }
 
 .burger_btn {
   display: none;
+  background: transparent;
+  cursor: pointer;
+  transition: $transition;
 
-  @media (max-width: 768px) {
-    display: block;
+  @media (max-width: 800px) {
+    display: flex;
   }
 }
 
@@ -33,8 +45,23 @@
   @include flex;
   gap: 1rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     display: none;
+
+    &.active {
+      display: flex;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      flex-direction: column;
+      background: $bg;
+      padding: 3rem 2rem;
+      z-index: 10;
+      gap: 1.5rem;
+      align-items: center;
+    }
   }
 }
 
@@ -61,6 +88,10 @@
 
 .nav-drop-wrap {
   position: relative;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 
 .nav-drop-trigger {
