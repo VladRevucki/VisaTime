@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import { lazy } from "react";
 
 const MainLayout = lazy(() => import("./Components/MainLayout/MainLayout"));
