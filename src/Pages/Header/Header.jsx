@@ -73,7 +73,7 @@ export const Header = () => {
         <button onClick={() => navigate("/")}>
           <img
             className={cls.header_logo}
-            src="../../../assets/img/logo.png"
+            src="/assets/img/logo.png"
             alt="logo"
           />
         </button>
