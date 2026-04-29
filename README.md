@@ -1,16 +1,77 @@
-# React + Vite
+# VisaTime
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VisaTime — это веб-приложение для оформления виз в различные страны. Проект предоставляет информацию о направлениях, ценах, сроках и условиях получения виз, а также форму для консультаций.
 
-Currently, two official plugins are available:
+## Описание проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение разработано для помощи пользователям в получении виз в Шенген, Великобританию, США и другие направления. Включает:
 
-## React Compiler
+- Информацию о популярных направлениях
+- Подробные описания требований к документам
+- Форму обратной связи для консультаций
+- Адаптивный дизайн для мобильных устройств
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Технологии
 
-## Expanding the ESLint configuration
+- **React 19** — библиотека для создания пользовательских интерфейсов
+- **Vite** — инструмент сборки с поддержкой HMR
+- **React Router 7** — маршрутизация для одностраничного приложения
+- **SCSS** — препроцессор CSS для стилизации
+- **ESLint** — линтер для JavaScript/TypeScript
+- **React Icons** — библиотека иконок
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone <url репозитория>
+   cd visa
+   ```
+
+2. Установите зависимости:
+   ```bash
+   npm install
+   ```
+
+3. Запустите приложение в режиме разработки:
+   ```bash
+   npm run dev
+   ```
+
+4. Откройте [http://localhost:5173](http://localhost:5173) в браузере.
+
+## Скрипты
+
+- `npm run dev` — запуск сервера разработки
+- `npm run build` — сборка для продакшена
+- `npm run preview` — предварительный просмотр сборки
+- `npm run lint` — проверка кода ESLint
+
+## Структура проекта
+
+```
+src/
+├── Components/          # Переиспользуемые компоненты
+│   ├── Directions/      # Компонент направлений
+│   ├── FAQ/             # Компонент FAQ
+│   ├── Form/            # Форма обратной связи
+│   └── ...
+├── Pages/               # Страницы приложения
+│   ├── HomePage/        # Главная страница
+│   ├── AboutPage/       # О нас
+│   ├── DirectionsPage/  # Направления
+│   └── ...
+├── data.js              # Данные о направлениях и константы
+├── styles/              # Глобальные стили и миксины
+└── App.jsx              # Главный компонент приложения
+```
+
+## Разработка
+
+Проект использует модульную архитектуру с разделением на компоненты и страницы. Стили написаны с использованием SCSS модулей для изоляции стилей.
+
+Для добавления новых направлений отредактируйте файл `src/data.js`.
+
+## Лицензия
+
+Этот проект является приватным и предназначен для внутреннего использования.
