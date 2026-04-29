@@ -33,6 +33,7 @@ const dropdownGroups = [
 ];
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const [dropOpen, setDropOpen] = useState(false);
   const dropRef = useRef(null);
@@ -66,7 +67,13 @@ export const Header = () => {
             alt="logo"
           />
         </button>
-        <nav className={cls.nav_wrapper}>
+        <button
+          className={`${cls.burger_btn} ${isOpen ? cls["active"] : ""}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          Menu
+        </button>
+        <nav className={`${cls.nav_wrapper} ${isOpen ? cls["active"] : ""}`}>
           <div
             className={cls["nav-drop-wrap"]}
             ref={dropRef}
@@ -99,7 +106,9 @@ export const Header = () => {
             </NavLink>
           ))}
         </nav>
-        <ButtonCustom>Оставить заявку</ButtonCustom>
+        <ButtonCustom>
+          <Link to="/contact">Оставить заявку</Link>
+        </ButtonCustom>
       </div>
     </div>
   );

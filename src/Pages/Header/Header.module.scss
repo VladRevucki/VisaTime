@@ -4,7 +4,7 @@
 .header {
   @include flex;
   justify-content: center;
-  padding: 0 15px;
+  padding: 0 2.5rem;
   background: rgba(244, 247, 242, 0.88);
 
   &_wrapper {
@@ -21,9 +21,21 @@
   }
 }
 
+.burger_btn {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .nav_wrapper {
   @include flex;
-  gap: 15px;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .nav_link {
@@ -37,11 +49,12 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: rgba(21, 94, 140, 0.74);
-    transition: width 0.3s ease;
+    background: $hover;
+    transition: $transition;
   }
 
-  &.active::after {
+  &.active::after,
+  &:hover::after {
     width: 100%;
   }
 }
@@ -92,21 +105,19 @@
 .nav-dropdown-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
-  column-gap: 8px;
-  row-gap: 16px;
+  padding: 1.2rem;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
 }
 
 .nav-dropdown-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .nav-dropdown-label {
-  font-size: 18px;
   text-align: center;
-  font-weight: 600;
   text-transform: uppercase;
   border-bottom: 1px solid $hover;
   color: $text2;
@@ -115,9 +126,10 @@
 .nav-dropdown-item {
   @include flex;
   flex-direction: column;
+  padding: 0.3rem;
   border-radius: $radius;
-  transition: $transition;
   box-shadow: 4px 4px 25px 5px #dddddd;
+  transition: $transition;
 
   &:hover {
     background-color: $hover;
@@ -129,20 +141,14 @@
   }
 }
 
-.nav-dropdown-country,
-.nav-dropdown-all {
-  font-weight: 600;
-}
-
 .nav-dropdown-price {
-  font-size: 14px;
-  color: #626262;
+  color: $text2;
 }
 
 .nav-dropdown-footer {
-  margin: 0 20px 20px 20px;
-  padding: 10px;
-  background: #fff;
+  margin: 0 1.2rem 1.2rem;
+  padding: 0.7rem;
+  background: $bg;
   border-radius: $radius;
   border: 2px solid $hover;
   text-align: center;
@@ -151,6 +157,6 @@
 
   &:hover {
     background-color: $hover;
-    color: #fff;
+    color: $bg;
   }
 }

@@ -9,12 +9,13 @@ export const DirectionDetailPage = () => {
 
   if (!item) {
     return (
-      <div>
-        <span>404</span>
+      <section className={cls.section_404}>
         <h1>Направление не найдено</h1>
         <p>Такой страны нет в нашем каталоге.</p>
-        <Link to="/directions">Все направления</Link>
-      </div>
+        <Link to="/directions" className={cls.section_404_link}>
+          Все направления
+        </Link>
+      </section>
     );
   }
 

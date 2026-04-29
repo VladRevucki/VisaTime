@@ -2,26 +2,55 @@
 @use "../../styles/variables.scss" as *;
 
 .site-footer {
-  border-top: 1px solid $border;
-  padding: 2.5rem 0 0;
-  margin-top: 1rem;
+  padding: 2rem 5rem 1rem;
+  border-top: 1px solid $border-hover;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(43, 108, 176, 0.4) 0%,
+      rgba(72, 126, 176, 0.4) 33%,
+      rgba(95, 142, 176, 0.4) 66%,
+      rgba(116, 157, 176, 0.4) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%
+    );
 }
 
 .footer-inner {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 2rem;
-  padding-bottom: 2rem;
+  gap: 1rem;
+  padding-bottom: 1rem;
 }
 
 .footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+
   .brand {
-    font-size: 1.25rem;
+    font-size: $size;
   }
   & > p {
     color: $text2;
-    font-size: 0.9rem;
-    margin-top: 0.4rem;
   }
 }
 
@@ -29,28 +58,62 @@
 .footer-contacts {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
 
   a,
   span {
     color: $text2;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.18s;
+    transition: $transition;
   }
 
   a:hover {
-    color: $text-hover;
+    color: $text;
+    text-decoration: underline;
   }
 }
 
 .footer-bottom {
-  border-top: 1px solid $border;
+  border-top: 1px solid $text;
   padding: 1rem 0;
+  text-align: center;
 
   p {
     color: $text2;
     font-size: 0.85rem;
     margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem 0.7rem 0;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-nav {
+    padding: 0.5rem 0;
+    border-top: 1px solid $border-hover;
+    border-bottom: 1px solid $border-hover;
+  }
+
+  .footer-nav,
+  .footer-contacts {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    padding: 0.5rem 0 1rem;
+    border-top: 1px solid $text;
   }
 }

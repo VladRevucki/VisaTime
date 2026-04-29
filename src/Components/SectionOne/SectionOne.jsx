@@ -1,5 +1,6 @@
 import cls from "./SectionOne.module.scss";
 import { metrics } from "../../data";
+import { Link } from "react-router-dom";
 
 export const SectionOne = () => {
   return (
@@ -14,9 +15,9 @@ export const SectionOne = () => {
           центр и сопровождение до результата.
         </p>
         <div className={cls.btn_wrapper}>
-          <a className={`${cls.btn} ${cls.btn_outline}`} href="#contact">
+          <Link to="/contact" className={`${cls.btn} ${cls.btn_outline}`}>
             Рассчитать стоимость
-          </a>
+          </Link>
           <a className={cls.btn} href="#steps">
             Смотреть этапы
           </a>

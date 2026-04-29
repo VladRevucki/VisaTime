@@ -6,16 +6,16 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
-      <div className="container footer-inner">
-        <div className="footer-brand">
-          <Link className="brand" to="/">
+    <footer className={cls["site-footer"]}>
+      <div className={cls["footer-inner"]}>
+        <div className={cls["footer-brand"]}>
+          <Link className={cls.brand} to="/">
             ✈ VisaTime
           </Link>
-          <p>Профессиональное оформление виз с 2017 года.</p>
+          <p>Профессиональное оформление виз с 2025 года.</p>
         </div>
 
-        <nav className="footer-nav" aria-label="Footer navigation">
+        <nav className={cls["footer-nav"]} aria-label="Footer navigation">
           {navLinks.map(({ to, label }) => (
             <Link key={to} to={to}>
               {label}
@@ -23,15 +23,14 @@ export const Footer = () => {
           ))}
         </nav>
 
-        <div className="footer-contacts">
+        <div className={cls["footer-contacts"]}>
           <a href="tel:+375290000000">+375 (29) 000-00-00</a>
-          <a href="mailto:info@visaflow.by">info@visaflow.by</a>
           <span>Минск, ул. Немига, 12</span>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="container">
+      <div className={cls["footer-bottom"]}>
+        <div>
           VisaTime | {currentYear} <br />
           by Vladislav Revutski
         </div>
