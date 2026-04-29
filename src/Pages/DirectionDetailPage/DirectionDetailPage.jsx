@@ -3,7 +3,7 @@ import { allDestinations } from "../../data";
 import { Link, useParams } from "react-router-dom";
 import Form from "../../Components/Form/Form";
 
-export const DirectionDetailPage = () => {
+const DirectionDetailPage = () => {
   const { slug } = useParams();
   const item = allDestinations.find((d) => d.slug === slug);
 
@@ -87,3 +87,5 @@ export const DirectionDetailPage = () => {
     </section>
   );
 };
+
+export default DirectionDetailPage;

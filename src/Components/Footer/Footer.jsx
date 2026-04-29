@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import cls from "./Footer.module.scss";
+import { Link } from "react-router-dom";
 import { navLinks } from "../../data";
 
-export const Footer = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -38,3 +38,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

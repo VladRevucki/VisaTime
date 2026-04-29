@@ -2,7 +2,7 @@ import cls from "./Directions.module.scss";
 import { destinations, tabs } from "../../data";
 import { useState } from "react";
 
-export const Directions = () => {
+const Directions = () => {
   const [active, setActive] = useState("schengen");
 
   return (
@@ -52,3 +52,5 @@ const CountryCard = ({ country, price, terms }) => {
     </article>
   );
 };
+
+export default Directions;

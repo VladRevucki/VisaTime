@@ -1,7 +1,7 @@
 import Form from "../../Components/Form/Form";
 import cls from "./ContactsPage.module.scss";
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   return (
     <div className={cls["page-wrap"]}>
       <div className={cls["page-hero"]}>
@@ -48,3 +48,5 @@ export const ContactsPage = () => {
     </div>
   );
 };
+
+export default ContactsPage;

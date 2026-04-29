@@ -1,26 +1,23 @@
-import { Suspense } from "react";
 import cls from "./MainLayout.module.scss";
+import { lazy, Suspense } from "react";
 import { Outlet } from "react-router";
-import { Header } from "../../Pages/Header/Header";
 import { Loader } from "../Loader/Loader";
-import { Footer } from "../Footer/Footer";
 
-export const MainLayout = () => {
+const Header = lazy(() => import("../../Pages/Header/Header"));
+const Footer = lazy(() => import("../Footer/Footer"));
+
+const MainLayout = () => {
   return (
     <>
-      <div className={cls.mainLayout}>
-        <Header />
-        <div className={cls.mainWrapper}>
-          <main className={cls.main}>
-            <Suspense fallback={<Loader />}>
-              <Outlet />
-            </Suspense>
-          </main>
-          <div className={cls.footer}>
-            <Footer />
-          </div>
-        </div>
-      </div>
+      <Header />
+      <main className={cls.mainWrapper}>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
     </>
   );
 };
+
+export default MainLayout;

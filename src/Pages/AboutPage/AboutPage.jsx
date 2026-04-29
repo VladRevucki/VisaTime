@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import cls from "./AboutPage.module.scss";
 import { aboutStats } from "../../data";
 
-export const AboutPage = () => {
+const AboutPage = () => {
   return (
     <section className={cls.section}>
       <div className={cls.about_head}>
@@ -38,3 +38,5 @@ export const AboutPage = () => {
     </section>
   );
 };
+
+export default AboutPage;

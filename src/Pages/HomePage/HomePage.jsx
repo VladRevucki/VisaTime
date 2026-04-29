@@ -1,11 +1,11 @@
 import cls from "./HomePage.module.scss";
 
-import { Directions } from "../../Components/Directions/Directions";
-import { SectionOne } from "../../Components/SectionOne/SectionOne";
-import { Steps } from "../../Components/Steps/Steps";
-import { FAQ } from "../../Components/FAQ/FAQ";
+import SectionOne from "../../Components/SectionOne/SectionOne";
+import Directions from "../../Components/Directions/Directions";
+import Steps from "../../Components/Steps/Steps";
+import FAQ from "../../Components/FAQ/FAQ";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <SectionOne />
@@ -15,3 +15,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

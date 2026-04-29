@@ -3,7 +3,7 @@ import { destinations, tabs, allDestinations } from "../../data";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const DirectionsPage = () => {
+const DirectionsPage = () => {
   const [active, setActive] = useState("all");
 
   const filtered =
@@ -70,3 +70,5 @@ export const DirectionsPage = () => {
     </section>
   );
 };
+
+export default DirectionsPage;

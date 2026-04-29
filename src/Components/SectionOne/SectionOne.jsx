@@ -2,7 +2,7 @@ import cls from "./SectionOne.module.scss";
 import { metrics } from "../../data";
 import { Link } from "react-router-dom";
 
-export const SectionOne = () => {
+const SectionOne = () => {
   return (
     <div className={cls.section_wrapper}>
       <div className={cls.section_container}>
@@ -34,3 +34,5 @@ export const SectionOne = () => {
     </div>
   );
 };
+
+export default SectionOne;

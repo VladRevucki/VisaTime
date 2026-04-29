@@ -2,7 +2,7 @@ import cls from "./Steps.module.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { steps } from "../../data";
 
-export const Steps = () => {
+const Steps = () => {
   return (
     <section id="steps" className={cls.section}>
       <div className={cls.steps_wrapper}>
@@ -31,3 +31,5 @@ export const Steps = () => {
     </section>
   );
 };
+
+export default Steps;

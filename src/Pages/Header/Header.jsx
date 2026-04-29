@@ -34,7 +34,7 @@ const dropdownGroups = [
   },
 ];
 
-export const Header = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const [dropOpen, setDropOpen] = useState(false);
@@ -159,3 +159,5 @@ function VisaDropdown({ onClose }) {
     </div>
   );
 }
+
+export default Header;

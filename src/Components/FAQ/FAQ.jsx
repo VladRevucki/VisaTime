@@ -22,7 +22,7 @@ const FaqItem = ({ q, a, open, onToggle }) => {
   );
 };
 
-export const FAQ = () => {
+const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => setOpenIndex((prev) => (prev === i ? null : i));
@@ -48,3 +48,5 @@ export const FAQ = () => {
     </section>
   );
 };
+
+export default FAQ;

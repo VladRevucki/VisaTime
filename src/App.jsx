@@ -1,11 +1,17 @@
 import "./App.scss";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
-import { MainLayout } from "./Components/MainLayout/MainLayout";
-import { HomePage } from "./Pages/HomePage/HomePage";
-import { AboutPage } from "./Pages/AboutPage/AboutPage";
-import { ContactsPage } from "./Pages/ContactsPage/ContactsPage";
-import { DirectionsPage } from "./Pages/DirectionsPage/DirectionsPage";
-import { DirectionDetailPage } from "./Pages/DirectionDetailPage/DirectionDetailPage";
+import { lazy } from "react";
+
+const MainLayout = lazy(() => import("./Components/MainLayout/MainLayout"));
+const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
+const AboutPage = lazy(() => import("./Pages/AboutPage/AboutPage"));
+const ContactsPage = lazy(() => import("./Pages/ContactsPage/ContactsPage"));
+const DirectionDetailPage = lazy(
+  () => import("./Pages/DirectionDetailPage/DirectionDetailPage"),
+);
+const DirectionsPage = lazy(
+  () => import("./Pages/DirectionsPage/DirectionsPage"),
+);
 
 function App() {
   return (
