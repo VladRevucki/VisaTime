@@ -1,6 +1,7 @@
 import cls from "./Header.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import logo from "../../../assets/img/logo.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { destinations, navLinks } from "../../data";
 import { IoIosArrowDown } from "react-icons/io";
@@ -71,11 +72,7 @@ export const Header = () => {
     <div className={cls.header}>
       <div className={cls.header_wrapper}>
         <button onClick={() => navigate("/")}>
-          <img
-            className={cls.header_logo}
-            src="/assets/img/logo.png"
-            alt="logo"
-          />
+          <img className={cls.header_logo} src={logo} alt="logo" />
         </button>
 
         <nav className={`${cls.nav_wrapper} ${isOpen ? cls.active : ""}`}>
