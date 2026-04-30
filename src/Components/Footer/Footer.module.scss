@@ -1,7 +1,7 @@
 @use "../../styles/mixin.scss" as *;
 @use "../../styles/variables.scss" as *;
 
-.site-footer {
+.footer_wrapper {
   padding: 2rem 2rem 0;
   border-top: 1px solid $border-hover;
   background-image:
@@ -33,14 +33,14 @@
     );
 }
 
-.footer-inner {
+.footer_inner {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
   gap: 1rem;
   padding-bottom: 1rem;
 }
 
-.footer-brand {
+.footer_brand {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,8 +54,8 @@
   }
 }
 
-.footer-nav,
-.footer-contacts {
+.footer_nav,
+.footer_contacts {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,7 +74,7 @@
   }
 }
 
-.footer-bottom {
+.footer_bottom {
   border-top: 1px solid $text;
   padding: 1rem 0;
   text-align: center;
@@ -87,32 +87,32 @@
 }
 
 @media (max-width: 768px) {
-  .site-footer {
+  .footer_wrapper {
     padding: 1.5rem 0.7rem 0;
   }
 
-  .footer-inner {
+  .footer_inner {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding-bottom: 1rem;
   }
 
-  .footer-brand {
+  .footer_brand {
     text-align: center;
   }
 
-  .footer-nav {
+  .footer_nav {
     padding: 0.5rem 0;
     border-top: 1px solid $border-hover;
     border-bottom: 1px solid $border-hover;
   }
 
-  .footer-nav,
-  .footer-contacts {
+  .footer_nav,
+  .footer_contacts {
     text-align: center;
   }
 
-  .footer-bottom {
+  .footer_bottom {
     padding: 0.5rem 0 1rem;
     border-top: 1px solid $text;
   }
